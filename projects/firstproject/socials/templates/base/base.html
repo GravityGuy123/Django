@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Socials{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% include 'base/navbar.html' %}
+
+    <!-- ✅ Display Django messages properly -->
+    {% if messages %}
+        <div id="messages">
+            {% for message in messages %}
+                <p class="message {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- ✅ Example main content area -->
+    <main>
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }}!</p>
+            <a href="{% url 'create_post' %}" class="btn">Create a New Post</a>
+        {% else %}
+            <p>You must <a href="{% url 'login' %}">log in</a> to create a post.</p>
+        {% endif %}
+
+        <hr>
+
+        <!-- Example post listing -->
+        {% if posts %}
+            {% for post in posts %}
+                <div class="post">
+                    <h2>{{ post.title }}</h2>
+                    <p>By {{ post.author.username }} on {{ post.created_at|date:"M d, Y" }}</p>
+                    <p>{{ post.content|truncatewords:25 }}</p>
+
+                    {% if post.post_image %}
+                        <img src="{{ post.post_image.url }}" alt="{{ post.title }}" style="max-width:300px;">
+                    {% endif %}
+
+                    {% if user == post.author %}
+                        <a href="{% url 'update_post' post.id %}">Edit</a> |
+                        <a href="{% url 'delete_post' post.id %}">Delete</a>
+                    {% endif %}
+                </div>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <p>No posts yet.</p>
+        {% endif %}
+    </main>
+
+    {% include 'base/footer.html' %}
+</body>
+</html>

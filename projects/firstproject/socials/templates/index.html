@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media App</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        .update-btn, .delete-btn {
+            background-color: orange;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .update-btn:hover, .delete-btn:hover {
+            background-color: darkorange;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World <br>Welcome to my cyberspace</h1>
+    <br>
+
+    <!-- Posts list below -->
+    <div>
+        {% for post in posts %}
+        <div>
+            {{ post.id }} <br>
+            {{ post.title }} <br>
+            {% if post.post_image %}
+                <img src="{{ post.post_image.url }}" alt="{{ post.title }}" width="200" height="150-">
+            {% endif %} <br>
+            {{ post.content }} <br>
+        
+            <!-- How many minutes ago -->
+            {{ post.created_at | timesince }} ago <br>
+
+            <!-- Date and Time -->
+            {{ post.updated_at }}<br> <br>
+            <div class="action-buttons">
+                <a class="update-btn" href="{% url 'update_post' id=post.id %}">Update</a>
+                <a class="delete-btn" href="{% url 'delete_post' id=post.id %}">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Add image to the table -->
+</body>
+</html>

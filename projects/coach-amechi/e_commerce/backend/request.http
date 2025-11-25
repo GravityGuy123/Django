@@ -1,0 +1,38 @@
+@ecommer_HostAddress = http://127.0.0.1:8000/api
+
+# Register User
+POST {{ecommer_HostAddress}}/user
+Content-Type: application/json
+
+{
+	"email": "amaei@unn.edu.ng",
+	"password": "Password1@",
+	"confirm_password": "Password1@"
+}
+###
+
+# Login User
+POST {{ecommer_HostAddress}}/token/
+Content-Type: application/json
+
+{
+	"email": "user2@gmail.com",
+	"password": "Password@2"
+}
+###
+
+# Get Current User
+GET {{ecommer_HostAddress}}/user/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxMjMwMzY4LCJpYXQiOjE3NjEyMjkxNjgsImp0aSI6ImNkY2FlZWNlYzcxODQzNzdiODYxYTViNWQ2MmIxZjdkIiwidXNlcl9pZCI6ImYwZTFjN2FkLTM1NWEtNDdjMi04NDIwLTE2Y2M5OTE4OGNmZSJ9.esFXX0Va16k1t58sTzwXDFy6TDS9ujb99gMi1A4BJGo
+
+###
+
+GET {{ecommer_HostAddress}}/vendor-only
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxMjMwMzY4LCJpYXQiOjE3NjEyMjkxNjgsImp0aSI6ImNkY2FlZWNlYzcxODQzNzdiODYxYTViNWQ2MmIxZjdkIiwidXNlcl9pZCI6ImYwZTFjN2FkLTM1NWEtNDdjMi04NDIwLTE2Y2M5OTE4OGNmZSJ9.esFXX0Va16k1t58sTzwXDFy6TDS9ujb99gMi1A4BJGo
+
+###
+
+GET {{ecommer_HostAddress}}/product/all
+Content-Type: application/json
+
+###

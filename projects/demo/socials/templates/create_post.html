@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <style>
+        body{
+            font-family: Arial, Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .content {
+            margin: auto;
+            margin-top: 3rem;
+            justify-items: center;
+            /* background-color: rgba(0, 0, 139, 0.3); */
+        }
+
+        .post-form{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .post-title{
+            text-transform: uppercase;
+            color: darkblue;
+        }
+
+        .title-input{
+            height: 3rem;
+            border: 1px solid #ccc;
+            border-radius: 0.3rem;
+        }
+
+        .submit-btn{
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.7rem 0;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main class="content">
+        <h1 class="post-title">Create Post</h1>
+        <form action="/create_post" method="post" enctype="multipart/form-data" class="post-form">
+            {% csrf_token %} 
+            <!-- Protects from cross site request forgery -->
+            <label for="title">Title:</label>
+            <input class="title-input" type="text" id="title" name="title" required> <br> <br>
+            <label for="content">Content:</label>
+            <textarea name="content" id="content" title="content" cols="50" rows="10" required></textarea> <br>
+            <input type="file" id="image" name="image" title="image" accept="image/*" required> </input> <br>
+            <button class="submit-btn" type="submit">Create Post</button>
+        </form>
+    </main>
+</body>
+</html>

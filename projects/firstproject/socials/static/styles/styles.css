@@ -1,0 +1,205 @@
+body{
+    background-color: grey;
+    font-family: Arial, Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ================== LOGIN PAGE STYLES ================== */
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #222;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    display: block;        /* block-level */
+    text-align: left;      /* left aligned */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;           /* match button width */
+    padding: 12px 14px;    /* slightly bigger for uniformity */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;           /* full width */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-container {
+        margin: 40px 15px;
+        padding: 30px 20px;
+    }
+}
+
+/* ================== REGISTER PAGE STYLES ================== */
+.register-container {
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 45px 35px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 35px;
+    color: #1a1a1a;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container label {
+    display: block;        /* block-level */
+    text-align: left;      /* left aligned */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+    width: 100%;           /* match button width */
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.register-container input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 6px rgba(40, 167, 69, 0.25);
+    outline: none;
+}
+
+.register-btn {
+    width: 100%;           /* full width */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.register-btn:hover {
+    background-color: #218838;
+}
+
+.register-btn:active {
+    transform: scale(0.98);
+}
+
+.login-redirect {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.login-redirect a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-redirect a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .register-container {
+        margin: 40px 15px;
+        padding: 30px 20px;
+    }
+}
+
+
+/* ================== DELETE AND UPDATE POST PAGE STYLES ================== */
+.update-btn, .delete-btn {
+            background-color: orange;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .update-btn:hover, .delete-btn:hover {
+            background-color: darkorange;
+        }

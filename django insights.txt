@@ -1,0 +1,26 @@
+There two(2) ways to write views
+
+1. Function Based Views
+2. Class Based Views
+
+We are using function based views
+
+
+# profile = {'name': 'John Doe', 'email': 'john@example.com'}
+# print("Profile Name:", profile['name'])
+# print("Profile Name:", profile.get('name', 'No Name Provided'))
+
+# Read the diff btw UUID V4 and V7
+
+
+# Assignment.
+# 1. Read about "serializers" from django rest framework. Specifically, "Serializer" and "ModelSerializer"
+# 2. Create a model classes for Cart, Order, Orderitems, ShippingAddress and Payments.
+# 3. Create serializers for user Registration.
+# 4. Read about inbuilt and custom permissions in django rest framework. Develop at least one custom permissions.
+# 5. Read about JWT authentication in django rest framework.
+# 6. Uv add the recommend package from no. 5 above.
+# 7. Implement jwt authentication
+# 8. Read about image optimisation, specifically "django_resized"
+# 9. Read about email sending and Install papercut.
+# 10. Read about payment flow and create an ErcasPay or Paystack account.

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        .update-btn, .delete-btn {
+            background-color: orange;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .update-btn:hover, .delete-btn:hover {
+            background-color: darkorange;
+        }
+        /* Add other styles from your CSS file if needed */
+    </style>
+</head>
+<body>
+    <h1>New Post</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="update-btn" type="submit">Create Post</button>
+    </form>
+
+    {% if errors %}
+    <ul>
+        {% for error in errors %}
+        <li>{{ error }}</li> <br>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
